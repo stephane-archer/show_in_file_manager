@@ -9,14 +9,20 @@ Future<void> showInFileManager(String path) async {
     throw PathNotFoundException(path, OSError());
   }
   if (Platform.isMacOS) {
-    _showInFinder(path);
+    await _showInFinder(path);
     return;
   }
   if (Platform.isWindows) {
-    // TODO: add Windows support
+    await _showInExplorer(path);
     return;
   }
   throw UnsupportedError("Unsupported Platform");
+}
+
+Future<void> _showInExplorer(String path) async {
+  // make compatible Windows path (/ -> \)
+  path = path_lib.normalize(path);
+  await Process.run('explorer.exe', ['/select,$path']);
 }
 
 Future<void> _showInFinder(String path) async {
