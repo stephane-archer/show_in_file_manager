@@ -3,10 +3,12 @@ import 'dart:io';
 import 'package:open_file_macos/open_file_macos.dart';
 import 'package:path/path.dart' as path_lib;
 
-Future<void> showInFileManager(String path) async {
-  final fileSystemEntityType = FileSystemEntity.typeSync(path);
+Future<void> showInFileManager(final String path) async {
+  final FileSystemEntityType fileSystemEntityType = FileSystemEntity.typeSync(
+    path,
+  );
   if (fileSystemEntityType == FileSystemEntityType.notFound) {
-    throw PathNotFoundException(path, OSError());
+    throw PathNotFoundException(path, const OSError());
   }
   if (Platform.isMacOS) {
     await _showInFinder(path);
