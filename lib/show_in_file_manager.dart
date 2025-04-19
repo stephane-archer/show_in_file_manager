@@ -24,7 +24,13 @@ Future<void> showInFileManager(final String path) async {
 Future<void> _showInExplorer(String path) async {
   // make compatible Windows path (/ -> \)
   path = path_lib.normalize(path);
-  await Process.run('explorer.exe', ['/select,$path']);
+  await Process.run('cmd.exe', [
+    '/c',
+    'start',
+    'explorer.exe',
+    '/select,',
+    path,
+  ]);
 }
 
 Future<void> _showInFinder(String path) async {

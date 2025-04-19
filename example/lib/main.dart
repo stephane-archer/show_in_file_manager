@@ -23,6 +23,8 @@ class FileManagerDemo extends StatelessWidget {
   final List<String> demoFilePaths = const [
     'test_data/a.txt',
     'test_data/dir',
+    'test_data/dir with space/file with space.txt',
+    'test_data/dir with space/',
     'test_data/does_not_exist',
   ];
 
