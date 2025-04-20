@@ -1,5 +1,5 @@
 name: show_in_file_manager
-description: "A new Flutter package project."
+description: "open the system's file manager and highlight a specific file or directory."
 version: 0.0.1
 repository: "https://github.com/stephane-archer/show_in_file_manager"
 
