@@ -1,6 +1,6 @@
 name: show_in_file_manager
 description: "open the system's file manager and highlight a specific file or directory."
-version: 0.0.1
+version: 0.0.2
 repository: "https://github.com/stephane-archer/show_in_file_manager"
 
 platforms:
