@@ -3,6 +3,10 @@ description: "open the system's file manager and highlight a specific file or di
 version: 0.0.1
 repository: "https://github.com/stephane-archer/show_in_file_manager"
 
+platforms:
+  macos:
+  windows:
+
 environment:
   sdk: ^3.7.2
   flutter: ">=1.17.0"
